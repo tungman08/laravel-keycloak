@@ -8,8 +8,16 @@ class HttpRequest {
       timeout: 10000
     });
 
+    const sleep = (ms) => {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    };
+
     this.axiosInstance.interceptors.request.use(
-      (config) => {
+      async (config) => {
+        while (!Vue.prototype.$keycloak.ready) {
+          await sleep(100);
+        }
+
         const token = Vue.prototype.$keycloak.token;
         if (token) {
           config.headers.common['Authorization'] = `Bearer ${token}`;
