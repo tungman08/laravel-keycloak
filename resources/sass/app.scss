@@ -1,0 +1,24 @@
+// Import styles with dark layout
+@import "~@coreui/coreui-pro/scss/themes/dark/coreui-dark";
+
+/* Import Bootstrap Vue Styles */
+@import '~bootstrap-vue/dist/bootstrap-vue.css';
+
+// ngx-perfect-scrollbar
+@import '~perfect-scrollbar/css/perfect-scrollbar.css';
+
+// sweetalert2
+@import '~sweetalert2/src/variables';
+@import '~sweetalert2/src/sweetalert2';
+
+// CoreUI Icons Set
+@import '~@coreui/icons/css/coreui-icons.css';
+
+// fontawesome
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
+// Import Simple Line Icons Set
+@import '~simple-line-icons/css/simple-line-icons.css';
+
+/* Import Bootstrap Vue Icons Styles */
+@import '~bootstrap-vue/src/icons';

@@ -1,0 +1,6 @@
+// spinkit
+$gray-base:  #181b1e !default;
+$gray-200:   lighten($gray-base, 80%);
+$body-color:    $gray-200 !default;
+$spinkit-spinner-color: $body-color;
+@import '~spinkit/scss/spinkit.scss';
