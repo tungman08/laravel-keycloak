@@ -59,7 +59,7 @@ class FoodController extends Controller
         $model = new Food();
         $model->name = $request->input('name');
         $food = $this->foodService->create($model);
-        return response()->json($food, 200);
+        return response()->json($food, 201);
     }
 
     /**
@@ -102,6 +102,6 @@ class FoodController extends Controller
     public function destroy($id)
     {
         $this->foodService->delete($id);
-        return response()->json(null, 200);
+        return response()->json(null, 204);
     }
 }
