@@ -3,7 +3,6 @@ import VueRouter from 'vue-router';
 
 import HomeComponent from './components/home/home.vue';
 import MainComponent from './components/main/main.vue';
-import LoginComponent from './components/auth/login.vue';
 import DashboardComponent from './components/main/dashboard/dashboard.vue';
 import ParentComponent from './components/main/parent/parent.vue';
 import Child1Component from './components/main/parent/child1/child1.vue';
@@ -24,17 +23,12 @@ const router = new VueRouter({
       component: HomeComponent
     },
     {
-      path: '/auth/login',
-      name: 'Login',
-      component: LoginComponent
-    },
-    {
       path: '/main',
       component: MainComponent,
       meta: { requiresAuth: true },
       children: [
         {
-          path: '/',
+          path: '',
           redirect: 'dashboard'
         },
         {
