@@ -21,8 +21,7 @@ class FoodService extends HttpRequest {
   }
   
   async remove(id) {
-    const {data} = await this.delete(`api/food/${id}`);
-    return data;
+    await this.delete(`api/food/${id}`);
   }
 }
 

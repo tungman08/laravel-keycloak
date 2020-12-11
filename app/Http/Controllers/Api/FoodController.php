@@ -57,7 +57,7 @@ class FoodController extends Controller
         ]);
 
         $model = new Food();
-        $model->name = $request->input('name');
+        $model->fill($request->only('name'));
         $food = $this->foodService->create($model);
         return response()->json($food, 201);
     }
@@ -88,7 +88,7 @@ class FoodController extends Controller
         ]);
 
         $model = new Food();
-        $model->name = $request->input('name');
+        $model->fill($request->only('name'));
         $food = $this->foodService->update($id, $model);
         return response()->json($food, 200);
     }

@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import axios from 'axios';
+import _ from 'lodash';
 
 class HttpRequest {
   constructor(url='/') {
@@ -21,7 +22,7 @@ class HttpRequest {
     // Add a response interceptor
     this.axiosInstance.interceptors.response.use(
       (response) => {
-        if (response.status === 200 || response.status === 201) {
+        if (_.includes([200, 201, 204], response.status)) {
           return Promise.resolve(response);
         } else {
           return Promise.reject(response);
